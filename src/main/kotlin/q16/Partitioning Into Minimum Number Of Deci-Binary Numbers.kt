@@ -21,6 +21,6 @@ class `Partitioning Into Minimum Number Of Deci-Binary Numbers` {
      * 1行解
      */
     fun minPartitions2(n: String): Int {
-        return n.map { it.toString().toInt() }.max() ?: 0
+        return n.map { it.toString().toInt() }.maxOrNull() ?: 0
     }
 }

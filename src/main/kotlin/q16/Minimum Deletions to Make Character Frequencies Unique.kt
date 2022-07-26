@@ -47,39 +47,39 @@ class `Minimum Deletions to Make Character Frequencies Unique` {
     /**
      * 初始草稿解
      */
-    fun minDeletions1(s: String): Int {
-
-        val map = hashMapOf<Char, Int>()
-        s.forEach {char ->
-            map[char] = (map[char] ?: 0) + 1
-        }
-
-        var sum = 0
-        val emptyList = arrayListOf<Int>()
-
-        for (index in 1..(map.maxBy { it.value }?.value ?: 1)) {
-            var numberSize =  map.filter { it.value == index }.size
-
-            when{
-                numberSize == 0 -> emptyList.add(index)
-                numberSize > 1 && emptyList.isNotEmpty() -> {
-                    for (i in numberSize downTo 0){
-                        sum += index - emptyList.last()
-                        emptyList.removeAt(emptyList.lastIndex)
-                        numberSize--
-                        if (emptyList.isEmpty() || numberSize == 1) break
-                    }
-
-                    if (numberSize > 1) {
-                        sum += (numberSize - 1) * index
-                    }
-                }
-                numberSize > 1 -> {
-                    sum += (numberSize - 1) * index
-                }
-            }
-        }
-
-        return sum
-    }
+//    fun minDeletions1(s: String): Int {
+//
+//        val map = hashMapOf<Char, Int>()
+//        s.forEach {char ->
+//            map[char] = (map[char] ?: 0) + 1
+//        }
+//
+//        var sum = 0
+//        val emptyList = arrayListOf<Int>()
+//
+//        for (index in 1..(map.maxBy { it.value }?.value ?: 1)) {
+//            var numberSize =  map.filter { it.value == index }.size
+//
+//            when{
+//                numberSize == 0 -> emptyList.add(index)
+//                numberSize > 1 && emptyList.isNotEmpty() -> {
+//                    for (i in numberSize downTo 0){
+//                        sum += index - emptyList.last()
+//                        emptyList.removeAt(emptyList.lastIndex)
+//                        numberSize--
+//                        if (emptyList.isEmpty() || numberSize == 1) break
+//                    }
+//
+//                    if (numberSize > 1) {
+//                        sum += (numberSize - 1) * index
+//                    }
+//                }
+//                numberSize > 1 -> {
+//                    sum += (numberSize - 1) * index
+//                }
+//            }
+//        }
+//
+//        return sum
+//    }
 }

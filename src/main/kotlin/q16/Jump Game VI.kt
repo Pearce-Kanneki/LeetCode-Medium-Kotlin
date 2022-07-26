@@ -15,7 +15,7 @@ class `Jump Game VI` {
             val maxNumber = if (index + k >= nums.size) nums.size - index else k
             if (index + 1 < nums.size) {
                 val tmpList = nums.copyOfRange(index + 1, maxNumber)
-                index += tmpList.indexOf(tmpList.max() ?: tmpList[0]) + 1
+                index += tmpList.indexOf(tmpList.maxOrNull() ?: tmpList[0]) + 1
                 result += nums[index]
             } else {
                 index = nums.size + 1
@@ -24,10 +24,4 @@ class `Jump Game VI` {
 
         return result
     }
-}
-
-fun main() {
-    val s = `Jump Game VI`().maxResult(intArrayOf(1,-1,-2,4,-7,3), 2)
-
-    println("result: $s")
 }

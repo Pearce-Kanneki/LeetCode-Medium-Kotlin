@@ -1,7 +1,6 @@
 package q07
 
 import java.util.*
-import kotlin.collections.ArrayDeque
 
 /**
  * No.792
